@@ -2516,6 +2516,7 @@
 #include "modular\stonekeep\code\jobs\job_types\peasants\merc_classes\grenzelhoft.dm"
 #include "modular\stonekeep\code\jobs\job_types\peasants\merc_classes\steppesman.dm"
 #include "modular\stonekeep\code\jobs\job_types\peasants\merc_classes\underdweller.dm"
+#include "modular\stonekeep\code\jobs\job_types\peasants\merc_classes\valorian.dm"
 #include "modular\stonekeep\code\jobs\job_types\peasants\merc_classes\zybantine.dm"
 #include "modular\stonekeep\code\jobs\job_types\pilgrim\bard.dm"
 #include "modular\stonekeep\code\jobs\job_types\pilgrim\briar.dm"
