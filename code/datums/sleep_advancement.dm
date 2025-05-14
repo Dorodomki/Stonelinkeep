@@ -1,6 +1,6 @@
 
 
-
+/*
 /datum/sleep_adv
 	var/sleep_adv_cycle = 0
 	var/sleep_adv_points = 0
@@ -12,7 +12,7 @@
 	var/datum/mind/mind = null
 
 	//dream watcher stuff
-	
+
 	var/list/available_modes = list("one_truth", "one_lie", "two_truths", "two_lies", "truth_lie")
 	var/list/remaining_modes = list()
 /datum/sleep_adv/New(datum/mind/passed_mind)
@@ -104,11 +104,11 @@
 	var/inspirations = 1
 	to_chat(mind.current, span_notice("My consciousness slips and I start dreaming..."))
 	var/dreamwatcher = FALSE
-	
+
 	if(HAS_TRAIT(mind.current, TRAIT_DREAM_WATCHER))
 		dreamwatcher = TRUE
-		
-		
+
+
 	if(dreamwatcher)
 		to_chat(mind.current, span_notice(pick(
 			"You feel the gaze of Noc before all else..",
@@ -137,7 +137,7 @@
 		to_chat(mind.current, span_notice("My creative thinking enhances them..."))
 
 	var/stress_median = stress_amount / stress_cycles
-	
+
 	if(dreamwatcher)
 		to_chat(mind.current, span_notice("Noc opens the dreamworld before me, a realm of impossible beauty and boundless thought."))
 		dream_dust += 100
@@ -161,9 +161,9 @@
 			span_boldwarning("The fabric of dreams unravels around you... shapes and voices blur, an eternal puzzle without an answer."),
 			span_boldwarning("A ripple of thought trembles through the dreamworld... each shift a new question, each answer a fleeting illusion.")
 		)
-	
+
 		to_chat(mind.current, pick(intro_lines))
-		
+
 
 	//Most Influential God
 	var/datum/storyteller/most_influential = SSgamemode.get_most_influential()
@@ -177,7 +177,7 @@
 
 		//RNG Stuff for the Antag dream
 		to_chat(mind.current, span_notice(generate_symbolic_dream()))
-		
+
 
 	grant_inspiration_xp(inspirations)
 
@@ -419,14 +419,14 @@
 				shuffle(truths)
 				picked += truths[1]
 				picked += truths[2]
-			else 
+			else
 				picked += truths
 		if("two_lies")
 			if(lies.len >= 2)
 				shuffle(lies)
 				picked += lies[1]
 				picked += lies[2]
-			else 
+			else
 				picked += lies
 		if("truth_lie")
 			picked += pick(truths)
@@ -483,7 +483,7 @@
 /datum/sleep_adv/proc/generate_symbol_for_antag(datum/antagonist/antag)
 
 	var/list/antag_dreams = SSgamemode.antag_dreams
-		
+
 	if(antag_dreams[antag.type])
 		return pick(antag_dreams[antag.type])
 	else
@@ -496,7 +496,7 @@
 		if(A.owner && A.owner.current.client) // Confirm the antag is active and controlled
 			truths += A
 	return truths
-	
+
 ///All antags for the fake list
 /datum/sleep_adv/proc/get_possible_fake_antags_excluding(list/truths)
 	var/list/all_possible = list(
@@ -526,4 +526,4 @@
 		lies += new antag_type()
 
 	return lies
-
+*/
