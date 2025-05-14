@@ -30,8 +30,8 @@
 	verbage_tp = "sews"
 
 /datum/crafting_recipe/roguetown/cloththree
-	name = "cloth (x3"
-	result = /obj/item/natural/cloth
+	name = "cloth (x3)"
+	result = list(/obj/item/natural/cloth = 3)
 	reqs = list(/obj/item/natural/fibers = 6)
 	tools = list(/obj/item/needle)
 	skillcraft = /datum/skill/misc/sewing

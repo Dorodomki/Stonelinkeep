@@ -2,7 +2,7 @@
 /datum/map_adjustment/stonehamlet
 	map_file_name = "stonehamlet.dmm"
 
-	blacklisted_jobs = list(
+	blacklist = list(
 		/datum/job/tapster, //Unneeded.
 		/datum/job/shophand, //Unneeded honestly.
 		/datum/job/gaffer_assistant, //Never filled, prefer to just ditch it.
@@ -47,7 +47,6 @@
 		/datum/job/hunter,
 		/datum/job/miner,
 
-		/datum/job/feldsher,
 		/datum/job/templar,
 		/datum/job/undertaker,
 		/datum/job/men_at_arms,

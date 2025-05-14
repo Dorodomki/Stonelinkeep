@@ -352,7 +352,7 @@
 	var/turf/destination = locate(chimney.x, chimney.y, chimney.z)
 	destination = locate(chimney.x, chimney.y, chimney.z - 1)
 	if(isliving(user))
-		mob_move_travel_z_level(user, destination)
+		movable_travel_z_level(user, destination)
 	user.adjustBruteLoss(pick(5,15))		// Climber takes some damage
 	user.AdjustStun(pick(40,50))
 	user.AdjustKnockdown(pick(25,30))

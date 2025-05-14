@@ -2767,6 +2767,8 @@
 /obj/item/candle/yellow{
 	pixel_x = -8
 	},
+/obj/item/flint,
+/obj/item/flint,
 /turf/open/floor/dirt/road,
 /area/rogue/outdoors/exposed/under/basement)
 "dJN" = (
@@ -4687,6 +4689,14 @@
 	dir = 1
 	},
 /area/rogue/outdoors/town/roofs)
+"gnj" = (
+/obj/item/rope/chain,
+/obj/item/rope/chain,
+/obj/item/rope/chain,
+/obj/item/rope/chain,
+/obj/structure/closet/crate/chest/neu,
+/turf/open/floor/woodturned,
+/area/rogue/indoors/town/garrison)
 "gnu" = (
 /obj/structure/closet/crate/chest/neu{
 	name = "food storage";
@@ -9655,7 +9665,7 @@
 /turf/open/floor/herringbone,
 /area/rogue/indoors/town/bath/redhouse)
 "mJx" = (
-/obj/item/reagent_containers/glass/bucket,
+/obj/item/reagent_containers/glass/bucket/wooden/alter,
 /turf/open/floor/grass,
 /area/rogue/outdoors/town/roofs)
 "mKc" = (
@@ -11791,10 +11801,7 @@
 /turf/open/floor/grass,
 /area/rogue/outdoors/rtfield/hamlet)
 "pxg" = (
-/obj/item/natural/cloth,
-/obj/item/natural/cloth,
-/obj/item/natural/cloth,
-/obj/structure/table/wood/plain/alt,
+/obj/item/bin/water/gross,
 /turf/open/floor/woodturned,
 /area/rogue/indoors/town/church)
 "pxr" = (
@@ -121683,7 +121690,7 @@ lXu
 mCc
 jmD
 awX
-awX
+gnj
 qTO
 sNs
 sNs

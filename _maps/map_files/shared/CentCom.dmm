@@ -7,8 +7,8 @@
 "ab" = (
 /obj/structure/hotspring/border/eleven,
 /obj/effect/lily_petal/three{
-	pixel_y = -14;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = -14
 	},
 /turf/open/floor/dirt/road,
 /area/rogue/outdoors)
@@ -54,12 +54,12 @@
 /obj/structure/hotspring,
 /obj/effect/lily_petal,
 /obj/effect/lily_petal/three{
-	pixel_y = -14;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = -14
 	},
 /obj/effect/lily_petal/two{
-	pixel_y = 13;
-	pixel_x = 11
+	pixel_x = 11;
+	pixel_y = 13
 	},
 /turf/open/floor/dirt/road,
 /area/rogue/outdoors)
@@ -426,8 +426,8 @@
 "bi" = (
 /obj/structure/hotspring/border/seven,
 /obj/structure/bridge{
-	layer = 4;
-	dir = 4
+	dir = 4;
+	layer = 4
 	},
 /turf/open/floor/dirt/road,
 /area/rogue/outdoors)
@@ -455,8 +455,8 @@
 "bn" = (
 /obj/structure/hotspring/border/eight,
 /obj/structure/bridge{
-	layer = 4;
-	dir = 4
+	dir = 4;
+	layer = 4
 	},
 /turf/open/floor/dirt/road,
 /area/rogue/outdoors)
@@ -505,8 +505,8 @@
 "bv" = (
 /obj/structure/hotspring/border/eleven,
 /obj/structure/bridge{
-	layer = 4;
-	dir = 4
+	dir = 4;
+	layer = 4
 	},
 /turf/open/floor/dirt/road,
 /area/rogue/outdoors)
@@ -529,8 +529,8 @@
 "by" = (
 /obj/structure/well,
 /obj/machinery/light/fueled/torchholder/hotspring{
-	pixel_y = -12;
-	pixel_x = -16
+	pixel_x = -16;
+	pixel_y = -12
 	},
 /turf/open/floor/grass/yel,
 /area/rogue/outdoors)
@@ -738,8 +738,8 @@
 	pixel_y = -7
 	},
 /obj/item/storage/crucible/random{
-	pixel_y = 13;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 13
 	},
 /obj/structure/table/wood/plain_alt,
 /obj/structure/fluff/walldeco/maidendrape,
@@ -1007,8 +1007,8 @@
 	name = "dusty parchment"
 	},
 /obj/item/paper/bsmith{
-	pixel_y = 13;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 13
 	},
 /obj/structure/table/wood/plain_alt,
 /turf/open/floor/hexstone,
@@ -1548,8 +1548,8 @@
 "gD" = (
 /obj/structure/bed/sleepingbag,
 /obj/item/skull{
-	pixel_y = -2;
-	pixel_x = -12
+	pixel_x = -12;
+	pixel_y = -2
 	},
 /turf/open/floor/twig,
 /area/rogue/indoors/lich)
@@ -1712,8 +1712,8 @@
 	pixel_y = 1
 	},
 /obj/item/grown/log/tree/small{
-	pixel_y = -5;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = -5
 	},
 /turf/open/floor/dirt,
 /area/rogue/outdoors/bog/inhumen_camp)
@@ -2182,13 +2182,6 @@
 	},
 /turf/open/floor/blocks,
 /area/rogue/indoors)
-"la" = (
-/obj/effect/landmark/start/bandit{
-	dir = 8
-	},
-/obj/structure/chair/stool,
-/turf/open/floor/ruinedwood/darker,
-/area/rogue/indoors/bandit_lair)
 "ld" = (
 /obj/structure/stairs/stone/church{
 	dir = 4
@@ -2310,8 +2303,8 @@
 /area/rogue/indoors/bandit_lair)
 "lZ" = (
 /obj/structure/circle_protection{
-	name = "Rune of Absolution";
-	icon_state = "zizocircle"
+	icon_state = "zizocircle";
+	name = "Rune of Absolution"
 	},
 /turf/open/floor/church,
 /area/rogue/indoors/lich)
@@ -2336,12 +2329,12 @@
 "ml" = (
 /obj/structure/table/wood/plain,
 /obj/item/weapon/knife/cleaver{
-	pixel_y = 3;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 3
 	},
 /obj/item/weapon/knife/stone{
-	pixel_y = 1;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 1
 	},
 /turf/open/floor/dirt,
 /area/rogue/outdoors/bog/inhumen_camp)
@@ -2486,9 +2479,6 @@
 /turf/open/floor/tile/checker_green,
 /area/rogue/indoors/lich)
 "ns" = (
-/obj/effect/landmark/start/bandit{
-	dir = 4
-	},
 /obj/structure/chair/stool,
 /turf/open/floor/ruinedwood/darker,
 /area/rogue/indoors/bandit_lair)
@@ -2631,9 +2621,9 @@
 	},
 /obj/item/kitchen/rollingpin,
 /obj/effect/decal/cleanable/dirt/cobweb{
-	pixel_y = -2;
+	dir = 8;
 	pixel_x = 1;
-	dir = 8
+	pixel_y = -2
 	},
 /obj/machinery/light/fueled/wallfire/candle/skull/r,
 /turf/open/floor/ruinedwood/darker,
@@ -2798,8 +2788,8 @@
 "ps" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/fueled/wallfire/candle/l{
-	icon_state = "invisible";
-	icon = null
+	icon = null;
+	icon_state = "invisible"
 	},
 /turf/open/floor/plasteel/maniac,
 /area/rogue)
@@ -2958,8 +2948,8 @@
 "qm" = (
 /obj/structure/table/wood/plain_alt,
 /obj/item/reagent_containers/glass/bowl{
-	pixel_y = 9;
-	pixel_x = 9
+	pixel_x = 9;
+	pixel_y = 9
 	},
 /obj/item/kitchen/rollingpin,
 /obj/item/weapon/knife/stone,
@@ -3159,8 +3149,8 @@
 "rG" = (
 /obj/effect/decal/remains/saiga,
 /obj/structure/flora/grass/herb/paris{
-	pixel_y = -3;
-	pixel_x = 9
+	pixel_x = 9;
+	pixel_y = -3
 	},
 /turf/open/floor/grass/mixyel,
 /area/rogue/outdoors/bog/inhumen_camp)
@@ -3523,8 +3513,8 @@
 	},
 /obj/structure/table/wood/plain_alt,
 /obj/item/reagent_containers/powder/flour{
-	pixel_y = 9;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 9
 	},
 /turf/open/floor/cobble,
 /area/rogue/indoors/bandit_lair)
@@ -3826,8 +3816,8 @@
 "vT" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/fueled/wallfire/candle/l{
-	icon_state = "invisible";
 	icon = null;
+	icon_state = "invisible";
 	pixel_x = 32
 	},
 /turf/open/floor/plasteel/maniac,
@@ -4342,8 +4332,8 @@
 "zW" = (
 /obj/structure/hotspring/border/fourteen,
 /obj/structure/bridge{
-	layer = 4;
-	dir = 4
+	dir = 4;
+	layer = 4
 	},
 /turf/open/floor/grass/yel,
 /area/rogue/outdoors)
@@ -4437,8 +4427,8 @@
 /area/rogue/indoors)
 "AC" = (
 /obj/machinery/light/fueled/wallfire/candle/l{
-	icon_state = "invisible";
 	icon = null;
+	icon_state = "invisible";
 	pixel_x = 32
 	},
 /turf/open/floor/plasteel/maniac,
@@ -4561,8 +4551,8 @@
 "BB" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/circle_protection{
-	name = "Rune of Absolution";
-	icon_state = "zizocircle"
+	icon_state = "zizocircle";
+	name = "Rune of Absolution"
 	},
 /turf/open/floor/churchmarble,
 /area/rogue/indoors/lich)
@@ -5534,9 +5524,9 @@
 	pixel_x = 24
 	},
 /obj/effect/decal/cleanable/dirt/cobweb{
-	pixel_y = -2;
+	dir = 8;
 	pixel_x = 1;
-	dir = 8
+	pixel_y = -2
 	},
 /obj/structure/fluff/walldeco/painting/skull{
 	pixel_x = 32
@@ -5609,8 +5599,8 @@
 "IS" = (
 /obj/structure/fluff/railing/border{
 	dir = 6;
-	pixel_y = 21;
-	pixel_x = -24
+	pixel_x = -24;
+	pixel_y = 21
 	},
 /obj/structure/fluff/railing/border{
 	dir = 1;
@@ -5936,8 +5926,8 @@
 "Ly" = (
 /obj/structure/fluff/railing/border{
 	dir = 10;
-	pixel_y = 21;
-	pixel_x = 24
+	pixel_x = 24;
+	pixel_y = 21
 	},
 /obj/structure/fluff/railing/border{
 	dir = 1;
@@ -6188,12 +6178,12 @@
 /obj/structure/table/wood/plain,
 /obj/item/restraints/legcuffs/beartrap,
 /obj/item/restraints/legcuffs/beartrap{
-	pixel_y = 9;
-	pixel_x = -8
+	pixel_x = -8;
+	pixel_y = 9
 	},
 /obj/item/restraints/legcuffs/beartrap{
-	pixel_y = 13;
-	pixel_x = 9
+	pixel_x = 9;
+	pixel_y = 13
 	},
 /turf/open/floor/twig,
 /area/rogue/indoors/lich)
@@ -6468,8 +6458,8 @@
 "PN" = (
 /obj/structure/fluff/railing/wood,
 /obj/machinery/light/fueled/torchholder/hotspring{
-	pixel_y = -1;
-	pixel_x = -16
+	pixel_x = -16;
+	pixel_y = -1
 	},
 /turf/open/floor/grass/yel,
 /area/rogue/outdoors)
@@ -6638,8 +6628,8 @@
 "QY" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/fueled/wallfire/candle/l{
-	icon_state = "invisible";
-	icon = null
+	icon = null;
+	icon_state = "invisible"
 	},
 /turf/open/floor/plasteel/maniac/damaged,
 /area/rogue)
@@ -7007,8 +6997,8 @@
 "Tz" = (
 /obj/structure/hotspring/border/twelve,
 /obj/effect/lily_petal/three{
-	pixel_y = -15;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = -15
 	},
 /turf/open/floor/dirt/road,
 /area/rogue/outdoors)
@@ -7143,12 +7133,12 @@
 	icon_state = "largetable"
 	},
 /obj/item/reagent_containers/food/snacks/meat/mince/fish{
-	pixel_y = 12;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 12
 	},
 /obj/item/reagent_containers/food/snacks/meat/mince/fish{
-	pixel_y = 3;
-	pixel_x = -12
+	pixel_x = -12;
+	pixel_y = 3
 	},
 /obj/machinery/light/fueled/oven/south,
 /turf/open/floor/cobble,
@@ -7187,8 +7177,8 @@
 "Ux" = (
 /obj/structure/hotspring/border/eleven,
 /obj/effect/lily_petal/three{
-	pixel_y = -15;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = -15
 	},
 /turf/open/floor/dirt/road,
 /area/rogue/outdoors)
@@ -7519,16 +7509,16 @@
 /area/rogue/outdoors/bog/inhumen_camp)
 "WB" = (
 /obj/structure/table/wood{
-	icon_state = "largetable";
-	dir = 10
+	dir = 10;
+	icon_state = "largetable"
 	},
 /obj/item/reagent_containers/food/snacks/veg/turnip_sliced{
-	pixel_y = 2;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 2
 	},
 /obj/item/reagent_containers/food/snacks/badrecipe{
-	pixel_y = 10;
-	pixel_x = 9
+	pixel_x = 9;
+	pixel_y = 10
 	},
 /turf/open/floor/cobble,
 /area/rogue/indoors/bandit_lair)
@@ -9480,9 +9470,9 @@ Xe
 Xe
 Xe
 Xe
-la
-la
-la
+ns
+ns
+ns
 oI
 Sq
 Zh

@@ -590,14 +590,14 @@
 
 // =============================================================================
 // ========================		MORNING STUBBLE		============================
-
+/* suspected of memory leak by RW
 /datum/sprite_accessory/facial_hair/stubble
 	name = "Stubble"
 	icon = 'modular/stonekeep/icons/facial.dmi'
 	icon_state = "facial_stubble"
 	gender = MALE
 	specuse = list("human", "dwarf", "elf", "tiefling", "halforc")
-/* suspected of memory leak by RW
+
 /mob/living/carbon/human/proc/try_grow_beard()
 
 	if(!(dna?.species))
