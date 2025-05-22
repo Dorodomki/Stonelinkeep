@@ -81,7 +81,7 @@
 		/datum/customizer/organ/ears/tengu,
 		/datum/customizer/organ/eyes/humanoid,
 		/datum/customizer/organ/tail/tengu,
-		/datum/customizer/bodypart_feature/hair/head/humanoid,
+		/datum/customizer/bodypart_feature/hair/head/humanoid/kaizoku,
 		/datum/customizer/bodypart_feature/hair/facial/humanoid,
 		/datum/customizer/bodypart_feature/accessory,
 		/datum/customizer/bodypart_feature/face_detail,

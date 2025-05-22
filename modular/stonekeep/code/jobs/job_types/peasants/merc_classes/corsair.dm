@@ -26,17 +26,17 @@
 	..()
 	if(H.mind)
 
-		H.mind?.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE) // Swords / Nonlethal.
-		H.mind?.adjust_skillrank(/datum/skill/misc/swimming, 4, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE) // For jumping off roofs. Don't lower.//the mercenaries aren't rogues
-		H.mind?.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE) // Most other classes have better Sneaking.
-		H.mind?.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)//basics for survival, he isn't a master chef otherwise he wouldn't be a poor mercenary
+		H.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
+		H.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+		H.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+		H.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE) // Swords / Nonlethal.
+		H.adjust_skillrank(/datum/skill/misc/swimming, 4, TRUE)
+		H.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE) // For jumping off roofs. Don't lower.//the mercenaries aren't rogues
+		H.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE) // Most other classes have better Sneaking.
+		H.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
+		H.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
+		H.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
+		H.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)//basics for survival, he isn't a master chef otherwise he wouldn't be a poor mercenary
 
 	shirt = pick(/obj/item/clothing/shirt/undershirt/sailor, /obj/item/clothing/shirt/undershirt/sailor/red)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)

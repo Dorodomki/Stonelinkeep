@@ -375,7 +375,7 @@
 	var/list/offhand_types = typecacheof(list(/obj/item/weapon/hammer, /obj/item/natural/stone, /obj/item/natural/stoneblock))
 	var/item = user.get_inactive_held_item()
 	if(user.used_intent.type == /datum/intent/chisel && is_type_in_typecache(item, offhand_types))
-		var/skill_level = user.mind.get_skill_level(/datum/skill/craft/masonry)
+		var/skill_level = user.get_skill_level(/datum/skill/craft/masonry)
 		var/work_time = (4 SECONDS - (skill_level * 5))
 		if(istype(W, /obj/item/weapon/chisel))
 			var/obj/item/weapon/chisel/chisel = W
@@ -694,7 +694,6 @@
 
 
 /obj/item/reagent_containers/food/snacks/fat
-	fried_type = /obj/item/reagent_containers/food/snacks/tallow
 	cooktime = 15 SECONDS
 
 
@@ -860,7 +859,7 @@
 /obj/item/reagent_containers/food/snacks
 	var/hard_distill
 
-/obj/item/reagent_containers/food/snacks/produce/onion
+/obj/item/reagent_containers/food/snacks/produce/vegetable/onion
 	can_distill = FALSE
 	hard_distill = TRUE
 
@@ -1469,3 +1468,37 @@
 		return
 	UnregisterSignal(wearer, COMSIG_MOB_UNEQUIPPED_ITEM)
 	wearer.remove_status_effect(/datum/status_effect/buff/goldint)
+
+
+
+/datum/container_craft/oven/bakedcat
+	name = "Baked Cat"
+	requirements = list(/obj/item/reagent_containers/food/snacks/flayedcat = 1)
+	output = /obj/item/reagent_containers/food/snacks/friedcat
+
+/datum/container_craft/oven/bakefrog
+	name = "Baked Frog"
+	requirements = list(/obj/item/reagent_containers/food/snacks/fogdart = 1)
+	output = /obj/item/reagent_containers/food/snacks/friedfrog
+
+/datum/container_craft/pan/cat
+	name = "Fried Cat"
+	crafting_time = 20 SECONDS
+	requirements = list(/obj/item/reagent_containers/food/snacks/flayedcat = 1)
+	output = /obj/item/reagent_containers/food/snacks/friedcat
+	cooked_smell = /datum/pollutant/food/fried_meat
+
+/datum/container_craft/pan/froge
+	name = "Fried Froge"
+	crafting_time = 20 SECONDS
+	requirements = list(/obj/item/reagent_containers/food/snacks/fogdart = 1)
+	output = /obj/item/reagent_containers/food/snacks/friedfrog
+	cooked_smell = /datum/pollutant/food/fried_meat
+
+
+/datum/container_craft/pan/tallow
+	name = "Tallow"
+	crafting_time = 20 SECONDS
+	requirements = list(/obj/item/reagent_containers/food/snacks/fat = 1)
+	output = /obj/item/reagent_containers/food/snacks/tallow
+	cooked_smell = /datum/pollutant/food/fried_meat

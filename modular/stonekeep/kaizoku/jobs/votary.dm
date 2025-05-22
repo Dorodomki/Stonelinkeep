@@ -53,17 +53,17 @@ Still working on this. But let's update some other things first.
 					H.set_patron(/datum/patron/abyssanctum/purifier) //Forces you to be Abyssanctum if you are not.
 
 	if(H.mind)
-		H.mind?.adjust_skillrank(/datum/skill/misc/sewing, 3, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE) // Khakkhara, buddhism mercy, a weapon and a walking stick
-		H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE) //Replace Axe/blunt. East asian monks made a lot of use of blades.
-		H.mind?.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE) //Reverted with Reading. More proper for east-asian monks.
-		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE) //Reverted with Athletics. More proper for east-asian monks.
-		H.mind?.adjust_skillrank(/datum/skill/magic/holy, 3, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/labor/fishing, 1, TRUE) //Abyssorites staple.
-		H.mind?.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE) // One rituals is required to be done while on water. This is quite required.
+		H.adjust_skillrank(/datum/skill/misc/sewing, 3, TRUE)
+		H.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
+		H.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE) // Khakkhara, buddhism mercy, a weapon and a walking stick
+		H.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+		H.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
+		H.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE) //Replace Axe/blunt. East asian monks made a lot of use of blades.
+		H.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE) //Reverted with Reading. More proper for east-asian monks.
+		H.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE) //Reverted with Athletics. More proper for east-asian monks.
+		H.adjust_skillrank(/datum/skill/magic/holy, 3, TRUE)
+		H.adjust_skillrank(/datum/skill/labor/fishing, 1, TRUE) //Abyssorites staple.
+		H.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE) // One rituals is required to be done while on water. This is quite required.
 
 		H.change_stat("intelligence", 1)
 		H.change_stat("endurance", 2) // For casting lots of spells, and working long hours without sleep... in any bed they find.

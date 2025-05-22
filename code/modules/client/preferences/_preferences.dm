@@ -1029,7 +1029,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 							to_chat(user, "<font color='red'>This voice color is too dark for mortals.</font>")
 							return
 						voice_color = sanitize_hexcolor(new_voice)
-/* STONEKEEP EDIT
+
 				if("headshot")
 					if(!user.client?.patreon?.has_access(ACCESS_ASSISTANT_RANK))
 						to_chat(user, "This is a patreon exclusive feature, your headshot link will be applied but others will only be able to view it if you are a patreon supporter.")
@@ -1047,7 +1047,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 					headshot_link = new_headshot_link
 					to_chat(user, "<span class='notice'>Successfully updated headshot picture</span>")
 					log_game("[user] has set their Headshot image to '[headshot_link]'.")
-*/
+
 				if("species")
 					var/list/crap = list()
 					for(var/A in GLOB.roundstart_races)
@@ -1090,7 +1090,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 						charflaw = C
 						if(charflaw.desc)
 							to_chat(user, "<span class='info'>[charflaw.desc]</span>")
-/* STONEKEEP EDIT
+
 				if("flavortext")
 					to_chat(user, "<span class='notice'>["<span class='bold'>Flavortext should not include nonphysical nonsensory attributes such as backstory or the character's internal thoughts. NSFW descriptions are prohibited.</span>"]</span>")
 					var/new_flavortext = input(user, "Input your character description:", "Flavortext", flavortext) as message|null
@@ -1103,7 +1103,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 					flavortext = new_flavortext
 					to_chat(user, "<span class='notice'>Successfully updated flavortext</span>")
 					log_game("[user] has set their flavortext'.")
-*/
+
 				if("s_tone")
 					var/listy = pref_species.get_skin_list()
 					var/new_s_tone = browser_input_list(user, "CHOOSE YOUR HERO'S [uppertext(pref_species.skin_tone_wording)]", "THE SUN", listy)

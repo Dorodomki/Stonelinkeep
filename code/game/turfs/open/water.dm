@@ -256,6 +256,40 @@
 		water_top_overlay.color = water_reagent.color
 		water_top_overlay.icon_state = "top[water_level]"
 
+/turf/open/water/add_neighborlay(dir, edgeicon, offset = FALSE)
+	var/add
+	var/y = 0
+	var/x = 0
+	switch(dir)
+		if(NORTH)
+			add = "[edgeicon]-n"
+			y = -32
+		if(SOUTH)
+			add = "[edgeicon]-s"
+			y = 32
+		if(EAST)
+			add = "[edgeicon]-e"
+			x = -32
+		if(WEST)
+			add = "[edgeicon]-w"
+			x = 32
+
+	if(!add)
+		return
+
+	var/image/overlay = image(icon, water_overlay, add, ABOVE_MOB_LAYER + 0.01, pixel_x = offset ? x : 0, pixel_y = offset ? y : 0 )
+
+	if(water_overlay)
+		LAZYADDASSOC(water_overlay.neighborlay_list, "[dir]", overlay)
+		water_overlay.add_overlay(overlay)
+
+/turf/open/water/remove_neighborlays()
+	for(var/key as anything in water_overlay.neighborlay_list)
+		cut_overlay(water_overlay.neighborlay_list[key])
+		qdel(water_overlay.neighborlay_list[key])
+		water_overlay.neighborlay_list[key] = null
+		LAZYREMOVE(water_overlay.neighborlay_list, key)
+
 /turf/open/water/Exited(atom/movable/AM, atom/newloc)
 	. = ..()
 	for(var/obj/structure/S in src)
@@ -280,7 +314,7 @@
 				if(get_dir(src, newloc) == dir)
 					return
 			if(user.mind && !user.buckled)
-				var/drained = max(15 - (user.mind.get_skill_level(/datum/skill/misc/swimming) * 5), 1)
+				var/drained = max(15 - (user.get_skill_level(/datum/skill/misc/swimming) * 5), 1)
 //				drained += (user.checkwornweight()*2)
 				drained += user.get_encumbrance() * 50
 				if(!user.adjust_stamina(drained))
@@ -438,7 +472,7 @@
 		return 0
 	var/returned = slowdown
 	if(user.mind && swim_skill)
-		returned = returned - (user.mind.get_skill_level(/datum/skill/misc/swimming))
+		returned = returned - (user.get_skill_level(/datum/skill/misc/swimming))
 	return returned
 /*	..................   Bath & Pool   ................... */
 /turf/open/water/bath

@@ -369,7 +369,7 @@
 	lockid = "tollhouse";
 	name = "old tollhouse"
 	},
-/obj/effect/mapping_helpers/door/locker,
+/obj/effect/mapping_helpers/access/locker,
 /obj/structure/barricade/wooden{
 	layer = 3;
 	plane = -3
@@ -490,7 +490,7 @@
 	lockid = "tollhouse";
 	name = "old tollhouse"
 	},
-/obj/effect/mapping_helpers/door/locker,
+/obj/effect/mapping_helpers/access/locker,
 /obj/structure/barricade/wooden{
 	layer = 3;
 	plane = -3
@@ -619,7 +619,7 @@
 	lockid = "tollhouse";
 	name = "old tollhouse"
 	},
-/obj/effect/mapping_helpers/door/locker,
+/obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/cobble,
 /area/rogue/indoors)
 "jF" = (
@@ -658,10 +658,7 @@
 /turf/closed/wall/mineral/stone/moss/red,
 /area/rogue/outdoors/bog/wetlands)
 "kq" = (
-/obj/structure/closet/crate/drawer{
-	keylock = 1;
-	lockid = "bog_gatehouse"
-	},
+/obj/structure/closet/crate/drawer,
 /obj/item/needle,
 /turf/open/floor/blocks,
 /area/rogue/indoors)
@@ -715,7 +712,7 @@
 	lockid = "tollhouse";
 	name = "old tollhouse"
 	},
-/obj/effect/mapping_helpers/door/locker,
+/obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/cobble,
 /area/rogue/indoors)
 "ld" = (

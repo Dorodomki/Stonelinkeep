@@ -47,8 +47,6 @@
 	var/neighborlay
 	/// If we were going to smooth with an Atom instead overlay this onto self
 	var/neighborlay_self
-	/// Current neighborlays, associative "DIR" = Overlay, neighborlays are always handled by the smoothing atom not what it smoothed with
-	var/list/neighborlay_list
 
 	vis_flags = VIS_INHERIT_PLANE|VIS_INHERIT_ID
 
@@ -225,7 +223,7 @@
 		return FALSE
 	if(isliving(A))
 		var/mob/living/O = A
-		var/dex_save = O.mind?.get_skill_level(/datum/skill/misc/climbing)
+		var/dex_save = O.get_skill_level(/datum/skill/misc/climbing)
 		if(dex_save >= 5)
 			if(O.m_intent != MOVE_INTENT_SNEAK) // If we're sneaking, don't show a message to anybody, shhh!
 				O.visible_message("<span class='danger'>[A] gracefully lands on top of [src]!</span>")
@@ -461,7 +459,7 @@
 			. += 1 // extra tile penalty
 			break
 	var/obj/structure/door/door = locate() in src
-	if(door && door.density && !door.locked && door.anchored) // door will have to be opened
+	if(door && door.density && !door.locked() && door.anchored) // door will have to be opened
 		. += 2 // try to avoid closed doors where possible
 
 	for(var/obj/structure/O in contents)

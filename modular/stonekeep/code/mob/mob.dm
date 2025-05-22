@@ -243,7 +243,6 @@
 	foodtype = RAW
 	w_class = WEIGHT_CLASS_SMALL
 	eat_effect = /datum/status_effect/debuff/uncookedfood
-	fried_type = /obj/item/reagent_containers/food/snacks/friedcat
 	cooked_smell = /datum/pollutant/food/fried_rat
 	sellprice = 0
 	rotprocess = SHELFLIFE_SHORT

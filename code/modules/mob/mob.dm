@@ -1013,7 +1013,9 @@ GLOBAL_VAR_INIT(mobids, 1)
  *
  * If exact match is set, then all our factions must match exactly
  */
-/mob/proc/faction_check_mob(mob/target, exact_match)
+/atom/movable/proc/faction_check_mob(mob/target, exact_match)
+
+/mob/faction_check_mob(mob/target, exact_match)
 	if(exact_match) //if we need an exact match, we need to do some bullfuckery.
 		var/list/faction_src = faction.Copy()
 		var/list/faction_target = target.faction.Copy()
@@ -1300,14 +1302,13 @@ GLOBAL_VAR_INIT(mobids, 1)
 	return "[message_spans_start(spans)][input]</span>"
 
 /// Send a menu that allows for the selection of an item. Randomly selects one after time_limit. selection_list should be an associative list of string and typepath
-/mob/proc/select_equippable(list/selection_list, time_limit = 20 SECONDS, message = "", title = "")
-	if(QDELETED(src))
-		return
-	if(!client || !mind)
+/mob/proc/select_equippable(user_client, list/selection_list, time_limit = 20 SECONDS, message = "", title = "")
+	if(QDELETED(src) || !mind)
 		return
 	if(!LAZYLEN(selection_list))
 		return
-	var/choice = browser_input_list(src, message, title, selection_list, timeout = time_limit)
+	var/to_send = user_client ? user_client : src
+	var/choice = browser_input_list(to_send, message, title, selection_list, timeout = time_limit)
 	if(!choice)
 		choice = pick(selection_list)
 	var/spawn_item = LAZYACCESS(selection_list, choice)

@@ -90,7 +90,6 @@
 	name = "sturdy chest"
 	icon_state = "chest_neu"
 	base_icon_state = "chest_neu"
-	keylock = FALSE
 	sellprice = 6
 
 /datum/crafting_recipe/roguetown/structure/carpentry/closet

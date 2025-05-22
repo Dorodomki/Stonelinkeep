@@ -159,10 +159,7 @@
 "cw" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/book/granter/spell/magick/fetch,
-/obj/structure/closet/crate/chest/neu_iron{
-	locked = 1;
-	lockid = "zizombiemonastery"
-	},
+/obj/structure/closet/crate/chest/neu_iron,
 /turf/open/floor/cobble,
 /area/rogue/under/lavamonastery)
 "cF" = (
@@ -567,10 +564,7 @@
 /area/rogue/under/lavamonastery)
 "ky" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/crate/chest/neu_iron{
-	locked = 1;
-	lockid = "zizombiemonastery"
-	},
+/obj/structure/closet/crate/chest/neu_iron,
 /obj/item/clothing/armor/leather/heavy,
 /turf/open/floor/cobble,
 /area/rogue/under/lavamonastery)
@@ -2155,7 +2149,7 @@
 /obj/structure/door/stone{
 	lockid = "mansionvampire"
 	},
-/obj/effect/mapping_helpers/door/locker,
+/obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/hexstone,
 /area/rogue/indoors/vampire_manor)
 "Pv" = (

@@ -113,6 +113,8 @@
 
 /datum/repeatable_crafting_recipe/survival/dart
 	starting_atom = null
+/datum/repeatable_crafting_recipe/sewing/linedanklet
+	starting_atom = null
 
 
 /datum/repeatable_crafting_recipe/soap

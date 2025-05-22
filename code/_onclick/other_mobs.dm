@@ -101,11 +101,11 @@
 		if(ishuman(src) && ishuman(user))
 			var/mob/living/carbon/human/target = src
 			var/datum/job/job = SSjob.GetJob(target.job)
-			if(length(user.mind?.apprentices) >= user.mind?.max_apprentices)
+			if(length(user.return_apprentices()) >= user.return_max_apprentices())
 				return
-			if((target.age == AGE_CHILD || job?.type == /datum/job/vagrant) && target.mind && !target.mind.apprentice)
+			if((target.age == AGE_CHILD || job?.type == /datum/job/vagrant) && target.mind && !target.is_apprentice())
 				to_chat(user, span_notice("You offer apprenticeship to [target]."))
-				user.mind?.make_apprentice(target)
+				user.make_apprentice(target)
 				return
 
 	if(user.cmode)
@@ -508,7 +508,7 @@
 				if(ishuman(A))
 					var/mob/living/carbon/human/U = src
 					var/mob/living/carbon/human/V = A
-					var/thiefskill = src.mind.get_skill_level(/datum/skill/misc/stealing) + (has_world_trait(/datum/world_trait/matthios_fingers) ? 1 : 0)
+					var/thiefskill = src.get_skill_level(/datum/skill/misc/stealing) + (has_world_trait(/datum/world_trait/matthios_fingers) ? 1 : 0)
 					var/stealroll = roll("[thiefskill]d6")
 					var/targetperception = (V.STAPER)
 					var/exp_to_gain = STAINT
@@ -544,7 +544,7 @@
 								V.dropItemToGround(picked)
 								put_in_active_hand(picked)
 								to_chat(src, span_green("I stole [picked]!"))
-								exp_to_gain *= src.mind.get_learning_boon(thiefskill)
+								exp_to_gain *= src.get_learning_boon(thiefskill)
 								if(V.client && V.stat != DEAD)
 									SEND_SIGNAL(U, COMSIG_ITEM_STOLEN, V)
 									record_featured_stat(FEATURED_STATS_THIEVES, U)
@@ -562,7 +562,7 @@
 					if(stealroll < targetperception)
 						exp_to_gain /= 5
 						to_chat(src, span_danger("I failed to pick the pocket!"))
-					src.mind.adjust_experience(/datum/skill/misc/stealing, exp_to_gain, FALSE)
+					src.adjust_experience(/datum/skill/misc/stealing, exp_to_gain, FALSE)
 					changeNext_move(mmb_intent.clickcd)
 				return
 			if(INTENT_SPELL)
@@ -584,12 +584,10 @@
 
 /atom/proc/attack_right(mob/user)
 	. = FALSE
-	if(!(interaction_flags_atom & INTERACT_ATOM_NO_FINGERPRINT_ATTACK_HAND))
+	if(!(interaction_flags_atom & INTERACT_ATOM_NO_FINGERPRINT_ATTACK_RIGHT))
 		add_fingerprint(user)
-	if(SEND_SIGNAL(src, COMSIG_ATOM_ATTACK_HAND, user) & COMPONENT_NO_ATTACK_HAND)
+	if(SEND_SIGNAL(src, COMSIG_ATOM_ATTACK_RIGHT, user) & COMPONENT_NO_ATTACK_RIGHT)
 		. = TRUE
-	if(interaction_flags_atom & INTERACT_ATOM_ATTACK_HAND)
-		. = _try_interact(user)
 
 //Return a non FALSE value to cancel whatever called this from propagating, if it respects it.
 /atom/proc/_try_interact(mob/user)

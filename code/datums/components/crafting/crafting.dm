@@ -143,6 +143,12 @@
 	add_abstract_elastic_data(ELASCAT_CRAFTING, "[name]", 1)
 	return
 
+/obj/OnCrafted(dirin, mob/user)
+	if(lock)
+		QDEL_NULL(lock)
+		can_add_lock = TRUE
+	. = ..()
+
 /obj/structure/OnCrafted(dirin, mob/user)
 	obj_flags |= CAN_BE_HIT
 	. = ..()
@@ -240,7 +246,7 @@
 						prob2craft -= (25*R.craftdiff)
 					if(R.skillcraft)
 						if(user.mind)
-							prob2craft += (user.mind.get_skill_level(R.skillcraft) * 25)
+							prob2craft += (user.get_skill_level(R.skillcraft) * 25)
 					else
 						prob2craft = 100
 					if(isliving(user))

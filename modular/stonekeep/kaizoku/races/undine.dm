@@ -77,7 +77,7 @@
 		/datum/customizer/organ/ears/kappa,
 		/datum/customizer/organ/eyes/humanoid,
 		/datum/customizer/organ/tail/kappa,
-		/datum/customizer/bodypart_feature/hair/head/humanoid,
+		/datum/customizer/bodypart_feature/hair/head/humanoid/kaizoku,
 		/datum/customizer/bodypart_feature/hair/facial/humanoid,
 		/datum/customizer/bodypart_feature/accessory,
 		/datum/customizer/bodypart_feature/face_detail,

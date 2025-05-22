@@ -269,9 +269,7 @@
 /area/rogue/under/catacombs/dwarfoutpost)
 "qs" = (
 /obj/item/clothing/cloak/cape/silk/random,
-/obj/structure/closet/crate/crafted_closet/lord{
-	locked = 0
-	},
+/obj/structure/closet/crate/crafted_closet,
 /obj/effect/spawner/map_spawner/artefact_outpost,
 /turf/open/floor/herringbone,
 /area/rogue/under/catacombs/dwarfoutpost)
