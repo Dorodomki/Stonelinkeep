@@ -10,7 +10,7 @@
 /datum/outfit/job/stonekeep/merc/boltslinger/pre_equip(mob/living/carbon/human/H)
 	..()
 	shoes = /obj/item/clothing/shoes/boots/leather
-	head =  pick (/obj/item/clothing/head/helmet/kettle/slit, /obj/item/clothing/head/helmet/kettle, /obj/item/clothing/head/helmet/sallet, /obj/item/clothing/head/helmet/nasal)//a vagabond wears what he can scavenge
+	head =  pick (/obj/item/clothing/head/helmet/kettle/slit, /obj/item/clothing/head/helmet/sallet)//a vagabond wears what he can scavenge
 	belt = /obj/item/storage/belt/leather/mercenary
 	beltl = /obj/item/storage/belt/pouch/coins/poor
 	shirt = pick (/obj/item/clothing/armor/gambeson, /obj/item/clothing/armor/gambeson/arming, /obj/item/clothing/armor/gambeson/light)
@@ -44,7 +44,7 @@
 	switch(weapon_choice)
 		if("Mercenary Crusher") //light Armor and good starting weapon, offensive focus + 2 skills
 			r_hand = /obj/item/weapon/thresher/military
-			armor = pick (/obj/item/clothing/armor/chainmail/iron, /obj/item/clothing/armor/cuirass/iron)//equal chance for a bad maille or bad plate, their steel goes to their helmet....
+			armor = pick (/obj/item/clothing/armor/chainmail/iron, /obj/item/clothing/armor/leather/splint)//equal chance for a bad maille or bad splint, their steel goes to their helmet....
 			wrists = pick (/obj/item/clothing/wrists/bracers/leather, /obj/item/clothing/wrists/bracers/splint)
 			neck = /obj/item/clothing/neck/chaincoif/iron
 			H.mind?.adjust_skillrank(/datum/skill/combat/whipsflails, 3, TRUE)
@@ -61,15 +61,15 @@
 			H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, pick(2,3), TRUE)//secondary weapon
 			H.mind?.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
 			H.change_stat("constitution", 1)
-		if("Mercenary bowman") //Mercenary boltslinger with different gear set + bow, really weak armor as exchange for ranged skills
-			backl= /obj/item/gun/ballistic/revolver/grenadelauncher/bow
+		if("Mercenary bowman") //Mercenary boltslinger with different gear, really weak armor as exchange for ranged skills
+			backl= /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 			r_hand = /obj/item/weapon/mace/cudgel/carpenter
 			neck =	/obj/item/clothing/neck/coif/cloth
 			armor = /obj/item/clothing/armor/leather/splint
 			wrists = /obj/item/clothing/wrists/bracers/leather
-			beltl = /obj/item/ammo_holder/quiver/arrows
+			beltl = /obj/item/ammo_holder/quiver/bolts
 			H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
-			H.mind?.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
-			H.mind?.adjust_skillrank(/datum/skill/combat/crossbows, pick(2,3), TRUE)
+			H.mind?.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
+			H.mind?.adjust_skillrank(/datum/skill/combat/bows, pick(2,3), TRUE)
 			H.change_stat("perception", 1)
 			H.change_stat("strength", -1)//this way no one will be overpowered with long range and cqc supremacy

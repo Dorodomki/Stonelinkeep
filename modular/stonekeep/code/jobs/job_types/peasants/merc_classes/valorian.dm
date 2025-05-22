@@ -49,7 +49,7 @@
 	switch(weapon_choice)
 		if("Valorian Footman") //light Armor and good starting weapons.
 			r_hand = /obj/item/weapon/mace/goden/warclub
-			armor = /obj/item/clothing/armor/chainmail/iron
+			armor = pick (/obj/item/clothing/armor/chainmail/iron, /obj/item/clothing/armor/leather/splint)
 			head = /obj/item/clothing/head/helmet/bascinet//one piece of steel per subclass
 			neck = /obj/item/clothing/neck/chaincoif/iron
 			wrists = pick (/obj/item/clothing/wrists/bracers/leather, /obj/item/clothing/wrists/bracers/splint)//waoh a roll for decent arm protecton
