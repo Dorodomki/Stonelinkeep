@@ -129,6 +129,22 @@
 	additional_items = list(/obj/item/grown/log/tree/stick)
 	created_item = /obj/item/weapon/axe/iron
 
+/datum/anvil_recipe/weapons/iron/ihatchet
+	name = "Iron hatchet (+Stick)"
+	recipe_name = "a small Axe"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/grown/log/tree/stick)
+	created_item = /obj/item/weapon/axe/ihatchet
+
+/datum/anvil_recipe/weapons/iron/battleaxe_iron
+	name = "Iron battle Axe 2 (+Stick)"
+	recipe_name = "an iron battle axe"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/grown/log/tree/stick, /obj/item/ingot/iron)
+	created_item = /obj/item/weapon/axe/iron/battle
+
 /datum/anvil_recipe/weapons/iron/bardiche
 	name = "Bardiche (+Bar, +Small Log)"
 	recipe_name = "a Bardiche"
@@ -235,6 +251,12 @@
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/weapon/sword/scimitar/messer
 
+/datum/anvil_recipe/weapons/iron/messer_valoria
+	name = "Valorian messer"
+	recipe_name = "a Weird messer"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/weapon/sword/scimitar/messer/valoria
+
 /datum/anvil_recipe/weapons/iron/spear_iron
 	name = "2x Spears (+Small Log)"
 	recipe_name = "a couple Spears"
@@ -258,6 +280,20 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/weapon/sword/iron
+
+/datum/anvil_recipe/weapons/iron/saber_iron//alt styles
+	name = "iron saber"
+	recipe_name = "a zybantu Sword"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/weapon/sword/iron/saber
+
+/datum/anvil_recipe/weapons/iron/hunting_iron//alt styles
+	name = "Hunting sword"
+	recipe_name = "a simple Sword"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/weapon/sword/iron/hunting
 
 /datum/anvil_recipe/weapons/iron/sword_iron
 	name = "Estoc"
@@ -290,6 +326,24 @@
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/small)
 	created_item = /obj/item/weapon/mace/goden
+	craftdiff = 2
+
+/datum/anvil_recipe/weapons/iron/spikedclub//alt styles
+	name = "Spiked warclub (+Small Log)"
+	recipe_name = "a Spiked warclub"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/grown/log/tree/small)
+	created_item = /obj/item/weapon/mace/goden/warclub
+	craftdiff = 2
+
+/datum/anvil_recipe/weapons/iron/iwarhammer//alt styles
+	name = "Great warhammer (+Small Log)"
+	recipe_name = "a Spiked great warhammer"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/grown/log/tree/small)
+	created_item = /obj/item/weapon/mace/goden/iwarhammer
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/iron/zweihander
@@ -560,3 +614,16 @@
 	additional_items = list(/obj/item/ingot/bronze, /obj/item/grown/log/tree/small)
 	created_item = /obj/item/weapon/polearm/spear/bronze
 	craftdiff = 0
+
+/datum/anvil_recipe/weapons/bronze/falx
+	name = "falx"
+	req_bar = /obj/item/ingot/bronze
+	created_item = /obj/item/weapon/sword/ifalx/ishort/bronze
+	craftdiff = 2
+
+/datum/anvil_recipe/weapons/bronze/greatfalx
+	name = "long falx (+bar)"
+	req_bar = /obj/item/ingot/bronze
+	additional_items = list(/obj/item/ingot/bronze)
+	created_item = /obj/item/weapon/sword/ifalx/bronze
+	craftdiff = 2

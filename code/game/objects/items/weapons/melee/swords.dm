@@ -198,6 +198,20 @@
 	wdefense = GOOD_PARRY
 	smeltresult = /obj/item/ingot/iron
 
+/obj/item/weapon/sword/iron/saber
+	force = DAMAGE_SWORD-1
+	force_wielded = DAMAGE_SWORD_WIELD-1
+	desc = "A simple iron saber with a tested edge, popular on the lands of the ziggurat, in hands of the desert riders."
+	icon_state = "isaber"
+	name = "iron saber"
+
+/obj/item/weapon/sword/iron/hunting
+	force = DAMAGE_SWORD-1
+	force_wielded = DAMAGE_SWORD_WIELD-1
+	desc = "A simple hunting sword, more like a long knife to stab a volf than a proper fighting sword."
+	icon_state = "ihuntingsword"
+	name = "hunting sword"
+
 /obj/item/weapon/sword/short
 	force = DAMAGE_SHORTSWORD
 	name = "short sword"
@@ -322,6 +336,10 @@
 	sellprice = 20
 	smeltresult = /obj/item/ingot/iron
 
+/obj/item/weapon/sword/scimitar/messer/valoria
+	name = "valorian messer"
+	desc = "A Straight iron blade with different curves that make the chopping easier, designed in valoria for their unique sword fighting styles."
+	icon_state = "ichopper"
 
 /*--------\
 | Rapiers |		Onehanded, slightly weaker cut, more AP thrust, harder to dodge.
@@ -436,7 +454,12 @@
 
 /obj/item/weapon/sword/rapier/silver
 	force = DAMAGE_SWORD-2
+	bigboy = FALSE
+	pixel_y = 0
+	pixel_x = 0
+	dropshrink = FALSE
 	name = "silver rapier"
+	icon = 'icons/roguetown/weapons/32.dmi'
 	desc = "An elegant silver rapier. Popular with lords and ladies in Valoria."
 	icon_state = "rapier_s"
 	smeltresult = /obj/item/ingot/silver
@@ -445,6 +468,19 @@
 	sellprice = 45
 	last_used = 0
 	is_silver = TRUE
+
+/obj/item/weapon/sword/rapier/silver/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.5,"sx" = -10,"sy" = -8,"nx" = 13,"ny" = -8,"wx" = -8,"wy" = -7,"ex" = 7,"ey" = -8,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 90,"sturn" = -90,"wturn" = -80,"eturn" = 81,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("onback")
+				return list("shrink" = 0.5,"sx" = -1,"sy" = 2,"nx" = 0,"ny" = 2,"wx" = 2,"wy" = 1,"ex" = 0,"ey" = 1,"nturn" = 0,"sturn" = 0,"wturn" = 70,"eturn" = 15,"nflip" = 1,"sflip" = 1,"wflip" = 1,"eflip" = 1,"northabove" = 1,"southabove" = 0,"eastabove" = 0,"westabove" = 0)
+			if("wielded")
+				return list("shrink" = 0.6,"sx" = 3,"sy" = 4,"nx" = -1,"ny" = 4,"wx" = -8,"wy" = 3,"ex" = 7,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 15,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.5,"sx" = -4,"sy" = -6,"nx" = 5,"ny" = -6,"wx" = 0,"wy" = -6,"ex" = -1,"ey" = -6,"nturn" = 100,"sturn" = 156,"wturn" = 90,"eturn" = 180,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
 // Hoplite Kophesh
 /obj/item/weapon/sword/khopesh
@@ -583,9 +619,11 @@
 
 /obj/item/weapon/sword/long/rider
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike)
-	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike, /datum/intent/sword/chop/long)
+	gripped_intents = list(/datum/intent/sword/thrust, /datum/intent/sword/cut, /datum/intent/sword/strike, /datum/intent/sword/chop/long)//added stab intent since it was missing
 	icon_state = "tabi"
 	name = "kilij scimitar"
+	force = DAMAGE_SWORD-1
+	force_wielded = DAMAGE_SWORD_WIELD-1//rebalanced to fit the round start gear, it was a free longsword + steel armor and helmet for the zybantu mercs cuz yeah, now deals less damage
 	desc = "A curved blade of Zybantu origin meaning 'curved one'. The standard sword that saw the conquest of the Zybantine continent and peoples."
 	sellprice = 80
 
@@ -803,88 +841,33 @@
 
 
 /obj/item/weapon/sword/rapier/ironestoc
-	name = "estoc"
-	desc = "A sword possessed of a quite long and tapered blade that is intended to be thrust between the \
-	gaps in an opponent's armor. The hilt is wrapped tight in black leather."
-	icon_state = "estoc"
-	force = 12
-	force_wielded = 25
-	icon = 'icons/roguetown/weapons/64.dmi'
-	inhand_x_dimension = 64
-	inhand_y_dimension = 64
+	name = "iron estoc"
+	desc = "A simple sword of valorian origin, favored by their design and unique sword styles."
+	icon_state = "iestoc"
+	icon = 'icons/roguetown/weapons/32.dmi'
+	bigboy = FALSE
+	pixel_y = 0
+	pixel_x = 0
+	dropshrink = FALSE
+	force = DAMAGE_SWORD
+	force_wielded = DAMAGE_SWORD_WIELD//we nerf the overbuffs of vanderlin on a common iron sword being better than a zweihander or a steel rapier
 	possible_item_intents = list(
-		/datum/intent/sword/chop,
-		/datum/intent/sword/strike,
+		/datum/intent/sword/cut,
+		/datum/intent/sword/thrust,
 	)
 	gripped_intents = list(
-		/datum/intent/sword/thrust/estoc,
-		/datum/intent/sword/lunge,
-		/datum/intent/sword/chop,
+		/datum/intent/sword/thrust,
+		/datum/intent/sword/cut,
 		/datum/intent/sword/strike,
 	)
-	bigboy = TRUE
 	gripsprite = TRUE
-	wlength = WLENGTH_GREAT
-	w_class = WEIGHT_CLASS_BULKY
+	wlength = WLENGTH_NORMAL
 	minstr = 8
 	smeltresult = /obj/item/ingot/iron
 	associated_skill = /datum/skill/combat/swords
-	max_blade_int = 300
-	wdefense = GREAT_PARRY
+	max_blade_int = 150//iron tier
+	wdefense = GOOD_PARRY
 	wbalance = DODGE_CHANCE_NORMAL
-
-/obj/item/weapon/estoc/getonmobprop(tag)
-	. = ..()
-	if(tag)
-		switch(tag)
-			if("gen")
-				return list(
-					"shrink" = 0.6,
-					"sx" = -6,
-					"sy" = 7,
-					"nx" = 6,
-					"ny" = 8,
-					"wx" = 0,
-					"wy" = 6,
-					"ex" = -1,
-					"ey" = 8,
-					"northabove" = 0,
-					"southabove" = 1,
-					"eastabove" = 1,
-					"westabove" = 0,
-					"nturn" = -50,
-					"sturn" = 40,
-					"wturn" = 50,
-					"eturn" = -50,
-					"nflip" = 0,
-					"sflip" = 8,
-					"wflip" = 8,
-					"eflip" = 0,
-					)
-			if("wielded")
-				return list(
-					"shrink" = 0.6,
-					"sx" = 3,
-					"sy" = 5,
-					"nx" = -3,
-					"ny" = 5,
-					"wx" = -9,
-					"wy" = 4,
-					"ex" = 9,
-					"ey" = 1,
-					"northabove" = 0,
-					"southabove" = 1,
-					"eastabove" = 1,
-					"westabove" = 0,
-					"nturn" = 0,
-					"sturn" = 0,
-					"wturn" = 0,
-					"eturn" = 15,
-					"nflip" = 8,
-					"sflip" = 0,
-					"wflip" = 8,
-					"eflip" = 0,
-					)
 
 /datum/intent/sword/thrust/estoc
 	name = "thrust"
@@ -950,3 +933,66 @@
 		. += "A useless vanity piece I commissioned after retiring my bow, unusable in battle, but light enough to forget its on your back"
 	else
 		. += "A hollow replica of the usual longsword design presumebly made for showsake, useless in real battle"
+
+//// FALXS = Enigman Tribe sword type, chops and cuts better than a normal sword but is bad against armored enemies like any sword, except is way worse at stabbing in armor gaps, just use a mace against any guy with minimal plate armor, this sucks intentionally
+
+/obj/item/weapon/sword/ifalx
+	icon_state = "igreatfalx"
+	icon = 'modular/stonekeep/icons/weapons_64.dmi'
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	pixel_y = -16
+	pixel_x = -16
+	bigboy = TRUE
+	name = "iron longfalx"
+	desc = "A long enigman sword, used by ancient tribes to repel any kind of invasion or destroy inhumen monsters, feared for their curved blade able to bypass shields and destroy arms."
+	force = DAMAGE_SWORD-1
+	force_wielded = DAMAGE_LONGSWORD_WIELD-1//is a longsword of iron so -1 since isn't a zweihander to go chopping like crazy
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust/curved)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust/curved, /datum/intent/sword/chop/long)
+	max_blade_int = 150 // iron tier
+	max_integrity = INTEGRITY_STRONG
+	wlength = WLENGTH_LONG
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_HIP
+	static_price = TRUE
+	sellprice = 35//is a rarity outside of enigma
+	smeltresult = /obj/item/ingot/iron
+/obj/item/weapon/sword/ifalx/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -10,"sy" = -8,"nx" = 13,"ny" = -8,"wx" = -8,"wy" = -7,"ex" = 7,"ey" = -8,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 90,"sturn" = -90,"wturn" = -80,"eturn" = 81,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.6,"sx" = 3,"sy" = 4,"nx" = -1,"ny" = 4,"wx" = -8,"wy" = 3,"ex" = 7,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 15,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.5,"sx" = -4,"sy" = -6,"nx" = 5,"ny" = -6,"wx" = 0,"wy" = -6,"ex" = -1,"ey" = -6,"nturn" = 100,"sturn" = 156,"wturn" = 90,"eturn" = 180,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+/obj/item/weapon/sword/ifalx/ishort
+	icon_state = "ifalx"
+	icon = 'modular/stonekeep/icons/weapons_64.dmi'
+	name = "iron falx"
+	desc = "A short enigman sword, used by ancient tribes to repel any kind of invasion or destroy inhumen monsters, feared for their curved blade able to bypass shields and cut arms."
+	force = DAMAGE_SWORD
+	gripped_intents = null
+	wlength = WLENGTH_NORMAL
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/chop, /datum/intent/sword/thrust/curved)
+
+//bronze falx for mercenary tribesman in roguecolony
+
+/obj/item/weapon/sword/ifalx/bronze
+	name = "bronze longfalx"
+	icon_state = "bgreatfalx"
+	desc = "A traditional enigman curved longblade, brutal and fearsome against the inhumen and marauders, this one is casted in bronze by the devouts of malum, a rarity in times of steel and modern war."
+	force = DAMAGE_SWORD
+	force_wielded = DAMAGE_LONGSWORD_WIELD
+	max_blade_int = 190 // iron tier plus
+	smeltresult = /obj/item/ingot/bronze
+
+/obj/item/weapon/sword/ifalx/ishort/bronze
+	icon_state = "bfalx"
+	icon = 'modular/stonekeep/icons/weapons_64.dmi'
+	name = "bronze falx"
+	desc = "A traditional enigman curved blade, brutal and fearsome against the inhumen and marauders, this one is casted in bronze by the devouts of malum, a rarity in times of steel and modern war."
+	force = DAMAGE_SWORD
+	smeltresult = /obj/item/ingot/bronze

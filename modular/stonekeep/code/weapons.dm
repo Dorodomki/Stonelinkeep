@@ -53,6 +53,18 @@
 /obj/item/weapon/mace/goden
 	icon = 'modular/stonekeep/icons/weapons_64.dmi'
 
+/obj/item/weapon/mace/goden/iwarhammer
+	icon = 'modular/stonekeep/icons/weapons_64.dmi'
+	desc = "A heavy and powerful warhammer, loved by the dwarfs who want to solve serious grudges."
+	icon = 'modular/stonekeep/icons/weapons_64.dmi'
+	icon_state = "iwarhammer"
+
+/obj/item/weapon/mace/goden/warclub
+	icon = 'modular/stonekeep/icons/weapons_64.dmi'
+	desc = "A humble war instrument made to smash and impale your enemies, loved by the militiamen who want to shut the mouth of a knight."
+	icon = 'modular/stonekeep/icons/weapons_64.dmi'
+	icon_state = "goedendagC"
+
 /obj/item/weapon/polearm/woodstaff
 	slot_flags = null
 
@@ -126,7 +138,7 @@
 	name = "studded club"
 	desc = "A simple wooden club reinforced with some metal bits."
 	icon = 'modular/stonekeep/icons/weapons.dmi'
-	icon_state = "bludgeon"
+	icon_state = "copper bludgeon"
 
 /obj/item/weapon/mace/copperbludgeon/getonmobprop(tag)
 	if(tag)
@@ -148,11 +160,11 @@
 
 /obj/item/weapon/flail/militia
 	desc = "A lucky hit from such a flail can squash a cheap helmet along with the wearer's skull."
-	icon_state = "iflail_old"
+	icon_state = "mflail"
 
 /obj/item/weapon/flail/towner
-	desc = "A lucky hit from such a flail can squash a cheap helmet along with the wearer's skull."
-	icon_state = "iflail_old"
+	desc = "A light wooden flail used in the farms."
+	icon_state = "pflail"
 
 /obj/item/weapon/axe/iron/getonmobprop(tag)
 	if(tag)

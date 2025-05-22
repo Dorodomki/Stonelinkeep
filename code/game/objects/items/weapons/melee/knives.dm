@@ -219,10 +219,13 @@
 //................ Hack-Knife ............... //
 /obj/item/weapon/knife/cleaver/combat
 	name = "hack-knife"
-	desc = "A short blade that even the weakest of hands can aspire to do harm with."
+	desc = "A short guarded blade preferred by the thugs who want to fix a personal issue from very close."
 	force = 10
-	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop)
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/chop)
 	icon_state = "combatknife"
+	item_state = "combatknife"
+	experimental_inhand = TRUE
+	experimental_onhip = TRUE
 	throwforce = 16
 	max_integrity = 180
 	slot_flags = ITEM_SLOT_HIP
