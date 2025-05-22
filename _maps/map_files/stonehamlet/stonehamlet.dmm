@@ -12474,6 +12474,7 @@
 /area/rogue/indoors/town/tavern/saiga)
 "qmF" = (
 /obj/structure/rack,
+/obj/item/weapon/shovel,
 /turf/open/floor/dirt/road,
 /area/rogue/under/town/basement)
 "qmZ" = (

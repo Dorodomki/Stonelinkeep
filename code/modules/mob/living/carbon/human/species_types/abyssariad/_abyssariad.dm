@@ -1,4 +1,41 @@
 GLOBAL_LIST_INIT(abyssal_readme, world.file2list("strings/rt/abyssaltide.json"))
+#define SPAN_ABYSSAL "abyssal"
+
+//DEFAULT ABYSSARIAD SKIN TONES
+#define SKIN_COLOR_OATHBOUND_MUQIAN "ffe0d1"
+#define SKIN_COLOR_OATHBOUND_KAIZOKU "fcccb3"
+#define SKIN_COLOR_OATHBOUND_SHUHEN "edc6b3"
+#define SKIN_COLOR_OATHBOUND_LINYOU "e2b9a3"
+#define SKIN_COLOR_OATHBOUND_DUSTWALKER "d9a284"
+#define SKIN_COLOR_WARPCASTER_MUQIAN "c9a893"
+#define SKIN_COLOR_WARPCASTER_KAIZOKU "ba9882"
+#define SKIN_COLOR_WARPCASTER_SHUHEN "99745d"
+#define SKIN_COLOR_WARPCASTER_LINYOU "745441"
+#define SKIN_COLOR_WARPCASTER_DUSTWALKER "302017"
+
+//SKYLANCER UNIQUE SKIN TONE
+#define SKIN_COLOR_PEPPERSBLOW "771111"
+
+//OGRE SKIN TONES
+#define SKIN_COLOR_DEFIANCE "bb5155" //RED DEFAULT
+#define SKIN_COLOR_DEFIANCE_SANGUINE "771111"
+#define SKIN_COLOR_STABILITY "6a9479"
+#define SKIN_COLOR_STABILITY_INTELLECT "286940"
+#define SKIN_COLOR_AUDACY "aa8e3a"
+#define SKIN_COLOR_AUDACY_MYSTERY "635834"
+#define SKIN_COLOR_BLANK_PURIFICATED "d8e1e2"
+
+
+//UNDINE SKIN TONES
+#define SKIN_COLOR_SWAMPCLAN "728400" //GREEN DEFAULT
+#define SKIN_COLOR_JUNGLECLAN "7a5e1b"
+#define SKIN_COLOR_LEAFCLAN "5ea889"
+#define SKIN_COLOR_BOGCLAN "1b7a5e"
+#define SKIN_COLOR_FORESTCLAN "5FB098"
+#define SKIN_COLOR_SHADOWCLAN "60609e"
+#define SKIN_COLOR_FIREBLOOMCLAN "E26846"
+#define SKIN_COLOR_ABYSSALCLAN "a198b8"
+
 
 /mob/living/carbon/human/species/abyssariad
 	race = /datum/species/abyssariad
@@ -341,7 +378,7 @@ GLOBAL_LIST_INIT(abyssal_readme, world.file2list("strings/rt/abyssaltide.json"))
 		playsound(src, 'sound/vo/mobs/bird/birdfly.ogg', 100, TRUE)
 		stop_flight() //Got exhausted? claps you down automatically. You deserved it you little bugger.
 		return TRUE
-	addtimer(CALLBACK(src, .proc/process_flight), 10) // Stamina draining every second
+	addtimer(CALLBACK(src, PROC_REF(process_flight), 10)) // Stamina draining every second
 
 /mob/living/carbon/human/proc/stop_flight()
 	if(!(movement_type & FLYING)) //If you're already on the ground, you're fine. This exists mostly to avoid runtimes.
