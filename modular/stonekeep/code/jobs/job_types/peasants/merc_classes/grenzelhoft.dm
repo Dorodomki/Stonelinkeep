@@ -15,16 +15,15 @@
 /datum/outfit/job/stonekeep/merc/grenzelhoft/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.mind)
-		H.mind?.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)	//Big sword user so - really helps them.
-		H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+		H.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)//emergency weapon for mercenaries
+		H.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+		H.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+		H.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
+		H.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)//they really can't do anything else besides fight for coin
+		H.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
+		H.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
+		H.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
+		H.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
 
 	if(H.gender == FEMALE)
 		H.underwear = "Femleotard"
@@ -59,33 +58,33 @@
 	var/weapon_choice = input("CHOOSE YOUR WEAPONS.", "ROGVE UP") as anything in weapons
 	H.set_blindness(0)
 	switch(weapon_choice)
-		if("Grenzelhoffter Greatswordsman") //light Armor and good starting weapon, offensive focus + skills
+		if("Grenzelhoffter Greatswordsman")
 			r_hand = /obj/item/weapon/sword/long/greatsword/zwei
-			neck = /obj/item/clothing/neck/highcollier/iron
+			neck = /obj/item/clothing/neck/chaincoif/iron
 			armor = /obj/item/clothing/armor/cuirass/grenzelhoft
 			wrists = pick (/obj/item/clothing/wrists/bracers/leather, /obj/item/clothing/wrists/bracers/splint)
-			H.mind?.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
-			H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, pick(2,3), TRUE)
-			H.mind?.adjust_skillrank(/datum/skill/combat/polearms, pick(2,3), TRUE)
+			H.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/axesmaces, pick(2,3), TRUE)
+			H.adjust_skillrank(/datum/skill/combat/polearms, pick(2,3), TRUE)
 			H.change_stat("strength", 1) // They need this to roll at least min STR for the Zwei.
-		if("Grenzelhoffter Footman") //Mercenary footman with warhammer + shield, warhammer fantasy style yeahh
-			backl= /obj/item/weapon/shield/tower/buckleriron
+		if("Grenzelhoffter Footman")
+			backl= /obj/item/weapon/shield/heater
 			r_hand = /obj/item/weapon/mace/warhammer
 			neck =	/obj/item/clothing/neck/gorget
 			armor = /obj/item/clothing/armor/cuirass/grenzelhoft
 			wrists = /obj/item/clothing/wrists/bracers/leather
-			H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
-			H.mind?.adjust_skillrank(/datum/skill/combat/swords, pick(2,3), TRUE)
-			H.mind?.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
-		if("Grenzelhoffter Archer") //Mercenary boltslinger with different gear set + bow, really weak armor as exchange for ranged skills
-			backl= /obj/item/gun/ballistic/revolver/grenadelauncher/bow
+			H.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/swords, pick(2,3), TRUE)
+			H.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
+		if("Grenzelhoffter Archer")
+			backl= /obj/item/gun/ballistic/revolver/grenadelauncher/bow/long
 			r_hand = /obj/item/weapon/mace/cudgel/carpenter
 			neck =	/obj/item/clothing/neck/coif/cloth
 			armor = /obj/item/clothing/armor/leather/splint
 			wrists = /obj/item/clothing/wrists/bracers/leather
 			beltl = /obj/item/ammo_holder/quiver/arrows
-			H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
-			H.mind?.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
-			H.mind?.adjust_skillrank(/datum/skill/combat/crossbows, pick(2,3), TRUE)
+			H.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/crossbows, pick(2,3), TRUE)
 			H.change_stat("strength", -1)
 			H.change_stat("perception", 1)

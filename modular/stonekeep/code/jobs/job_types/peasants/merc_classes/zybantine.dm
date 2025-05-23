@@ -33,15 +33,15 @@
 		H.grant_language(/datum/language/zybantine)
 		to_chat(H, "<span class='info'>I can speak Zybean with ,z before my speech.</span>")
 	if(H.mind)
-		H.mind?.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
-
+		H.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)//emergency weapon for mercenaries
+		H.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+		H.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+		H.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
+		H.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)//they really can't do anything else besides fight for coin
+		H.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
+		H.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
+		H.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
+		H.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
 		H.merctype = 6
 
 		H.change_stat("strength", 1)
@@ -55,35 +55,35 @@
 	var/weapon_choice = input("CHOOSE YOUR WEAPONS.", "ROGVE UP") as anything in weapons
 	H.set_blindness(0)
 	switch(weapon_choice)
-		if("Desert longswordsman") //light Armor and good starting weapons.
+		if("Desert longswordsman")
 			r_hand = /obj/item/weapon/sword/long/rider //the sword got nerfed code wise, is good to go
 			armor = /obj/item/clothing/armor/brigandine/coatplates//their armor got nerfed code wise, is good to go
 			neck =	/obj/item/clothing/neck/chaincoif/iron
 			wrists = pick (/obj/item/clothing/wrists/bracers/leather, /obj/item/clothing/wrists/bracers/splint)
-			H.mind?.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
-			H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, pick(2,3), TRUE)
-			H.mind?.adjust_skillrank(/datum/skill/combat/polearms, pick(2,3), TRUE)
+			H.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/axesmaces, pick(2,3), TRUE)
+			H.adjust_skillrank(/datum/skill/combat/polearms, pick(2,3), TRUE)
 			H.change_stat("strength", 1)
-		if("Desert Footman") //Mercenary swordsman with saber + shield
+		if("Desert Footman")
 			backr= /obj/item/weapon/shield/tower/horseman
 			r_hand = /obj/item/weapon/sword/iron/saber
 			neck =	/obj/item/clothing/neck/chaincoif/iron
 			armor = /obj/item/clothing/armor/brigandine/coatplates
 			wrists = /obj/item/clothing/wrists/bracers/leather
-			H.mind?.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
-			H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, pick(2,3), TRUE)
-			H.mind?.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/axesmaces, pick(2,3), TRUE)
+			H.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
 			H.change_stat("constitution", 1)
-		if("Desert Archer") //Mercenary boltslinger with different gear set + bow, really weak armor as exchange for ranged skills
+		if("Desert Archer") //desert archer with quick bow + quick knife
 			backr= /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve
 			r_hand = /obj/item/weapon/knife/cleaver/combat
 			neck = /obj/item/clothing/neck/keffiyeh/red
 			armor = /obj/item/clothing/armor/leather/splint
 			wrists = /obj/item/clothing/wrists/bracers/leather
 			beltl = /obj/item/ammo_holder/quiver/arrows
-			H.mind?.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
-			H.mind?.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
-			H.mind?.adjust_skillrank(/datum/skill/combat/crossbows, pick(2,3), TRUE)
+			H.adjust_skillrank(/datum/skill/combat/crossbows, pick (2,3), TRUE)
+			H.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
 			H.change_stat("perception", 1)
 			H.change_stat("strength", -1)
 
